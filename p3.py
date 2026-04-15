@@ -8,7 +8,10 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 # Creem el data seed
-df =  pd.read_csv("star_wars_charecter_dataset.csv")
+print("1. Càrrega del dataset")
+df =  pd.read_csv("star_wars_character_dataset.csv")
 
-#Agafem variables immportants
-
+print("2. Anàlisi inicial del dataset")
+print(" Inspecciona el dataset i respon:")
+print(" - Quantes instàncies conté? " f"Instàncies: {df.shape[0]}")
+print(" - Quantes variables té? "f"Variables: {df.shape[1]}")
