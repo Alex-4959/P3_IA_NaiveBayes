@@ -63,3 +63,27 @@ X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_
 print(f"Instàncies d'entrenament: {len(X_train)}")
 print(f"Instàncies de test: {len(X_test)}")
 
+print("6. construcció de models")
+print(" Construeix i entrena els següents models (de scikit-learn) utilitzant el conjunt d’entrenament:")
+print('Un model DummyClassifier amb estratègia "most_frequent" ')
+dummy_clf = DummyClassifier(strategy="most_frequent")
+dummy_clf.fit(X_train, y_train)
+print("Un model Naive Bayes (GaussianNB) ")
+gnb_clf = GaussianNB()
+gnb_clf.fit(X_train, y_train.values.ravel())
+
+print("7. Avaluació dels models")
+print(" Compara els resultats dels dos models:")
+print(" Calcula les mètriques de rendiment")
+y_pred_dummy = dummy_clf.predict(X_test)
+y_pred_gnb = gnb_clf.predict(X_test)
+print("Mostra les matrius de confusió ")
+print("DummyClassifier:")
+print(confusion_matrix(y_test, y_pred_dummy))
+print("Analitza els resultats obtinguts i respon")
+print("Explica per què els resultats són baixos en aquest dataset.")
+print("Els resultats són baixos perquè el dataset és petit i desequilibrat," \
+ " amb moltes classes diferents i poques instàncies per classe. " \
+ "Això dificulta que els models puguin aprendre patrons significatius per a la predicció del planeta d'origen.")
+
+
