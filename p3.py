@@ -36,8 +36,30 @@ print(" - variable objectiu (Y)")
 y=df.drop(columns=["height", "mass", "hair_color", "skin_color", "eye_color", "species", "sex"])
 print(y)
 
+# Omplim amb la mitjana de la columna
+df['height'] = df['height'].fillna(df['height'].mean())
+df['mass'] = df['mass'].fillna(df['mass'].mean())
+
+# Omplim amb el valor més freqüent (moda)
+df['hair_color'] = df['hair_color'].fillna(df['hair_color'].mode()[0])
+df['sex'] = df['sex'].fillna(df['sex'].mode()[0])
+df['species'] = df['species'].fillna(df['species'].mode()[0])
+
+# Eliminem les files on la classe és desconeguda
+df = df.dropna(subset=['homeworld'])
+
 print("5. Train / Test split")
 print("En data mining, el model s’entrena amb un conjunt de dades i s’avalua amb dades noves.")
 print(" - Divideix el dataset en conjunt d’entrenament i de test")
+X_train, X_test, y_train, y_test = train_test_split(x, y)
+print(f"Instàncies d'entrenament: {len(X_train)}")
+print(f"Instàncies de test: {len(X_test)}")
+
 print(" - Quin percentatge utilitza per defecte la llibreria?")
+print("     Per defecte, la llibreria utilitza un 75% per a l'entrenament i un 25% per al test.")
+
 print(" - Modifica’l perquè el conjunt de test sigui del 30% ")
+X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42)
+print(f"Instàncies d'entrenament: {len(X_train)}")
+print(f"Instàncies de test: {len(X_test)}")
+
