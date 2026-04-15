@@ -12,3 +12,4 @@ df =  pd.read_csv("star_wars_charecter_dataset.csv")
 
 #Agafem variables immportants
 
+df = df
