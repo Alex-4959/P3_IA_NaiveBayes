@@ -23,3 +23,5 @@ print(" - Quines variables consideres importants? Height, mass, hair_color, skin
 print(" - Quines eliminaries? name, birth_year, gender, films, vehicles, starships")
 print(" - Elimina les variables que consideris no rellevants i justifica la decisió")
 df = df.drop(columns=["name", "birth_year", "gender", "films", "vehicles", "starships"])
+print(" Les variables que s'han eliminat no tenen res a veure amb el planeta d'origen, per tant no aporten informació rellevant per a la predicció.")
+print("4. Separació de variables (X i Y)")
