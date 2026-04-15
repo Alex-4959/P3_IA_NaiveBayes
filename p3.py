@@ -23,8 +23,8 @@ print(" - Quines variables consideres importants? Height, mass, hair_color, skin
 print(" - Quines eliminaries? name, birth_year, gender, films, vehicles, starships")
 print(" - Elimina les variables que consideris no rellevants i justifica la decisió")
 df = df.drop(columns=["name", "birth_year", "gender", "films", "vehicles", "starships"])
-
 print(" Les variables que s'han eliminat no tenen res a veure amb el planeta d'origen, per tant no aporten informació rellevant per a la predicció.")
+
 print("4. Separació de variables (X i Y)")
 print("En data mining es distingeix entre variables predictores (X) i variable objectiu (Y)")
 print("Separa el dataset en:")
@@ -35,5 +35,9 @@ print(x)
 print(" - variable objectiu (Y)")
 y=df.drop(columns=["height", "mass", "hair_color", "skin_color", "eye_color", "species", "sex"])
 print(y)
-print(" Les variables que s'han eliminat no tenen res a veure amb el planeta d'origen, per tant no aporten informació rellevant per a la predicció.")
-print("4. Separació de variables (X i Y)")
+
+print("5. Train / Test split")
+print("En data mining, el model s’entrena amb un conjunt de dades i s’avalua amb dades noves.")
+print(" - Divideix el dataset en conjunt d’entrenament i de test")
+print(" - Quin percentatge utilitza per defecte la llibreria?")
+print(" - Modifica’l perquè el conjunt de test sigui del 30% ")
