@@ -35,8 +35,7 @@ print(x)
 print(" - variable objectiu (Y)")
 y=df.drop(columns=["height", "mass", "hair_color", "skin_color", "eye_color", "species", "sex"])
 print(y)
-print(" Les variables que s'han eliminat no tenen res a veure amb el planeta d'origen, per tant no aporten informació rellevant per a la predicció.")
-print("4. Separació de variables (X i Y)")
+
 
 
 
